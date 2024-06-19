@@ -1,0 +1,134 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "Zamowienie",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Miasto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Dostarczone",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Przyjete",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Godzinadodania",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Zamowienie",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Miasto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Restauracja",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "datadzien",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Godzinadodania",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Zamowienie",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Miasto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Dostarczone",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Przyjete",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Przydzielonykurier",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Godzinadodania",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Zamowienie",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Miasto",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Dostarczone",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Przyjete",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Przydzielonykurier",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "datadzien",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "datadostarczenia",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Zamowienie",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Dostarczone",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Przydzielonykurier",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Godzinadodania",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "fcm_tokens",
+      "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    }
+  ]
+}

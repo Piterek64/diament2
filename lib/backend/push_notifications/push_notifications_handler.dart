@@ -4,6 +4,7 @@ import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import '../../components/customNotificationDialog.dart';
 
 
 final _handledMessageIds = <String?>{};
@@ -62,7 +63,39 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
       }
     }
   }
+  void messageListener(BuildContext context) {
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+// Handle multiple notifications for the same message
+      if (_handledMessageIds.contains('${message.messageId}0000foreground')) {
+        return;
+      }
+      _handledMessageIds.add('${message.messageId}0000foreground');
 
+      print('Got a new message whilst in the foreground!');
+
+// ... Extract notification data ...
+
+      String? title = message.notification?.title;
+      print('Notification Title: $title');
+
+      String? body = message.notification?.body;
+      print('Notification Body: $body');
+
+      String? image = isWeb
+          ? message.notification?.web?.image
+          : message.notification?.android?.imageUrl ??
+              message.notification?.apple?.imageUrl;
+      print('Notification Image: $image');
+
+      print('Message also contained data: ${message.data}');
+
+// Show a custom dialog and handle after closure
+
+      showCustomNotificationDialog(context, image, title, body)
+          .then((_) => _handlePushNotification(message));
+    });
+  }
+///////////////
   @override
   void initState() {
     super.initState();
